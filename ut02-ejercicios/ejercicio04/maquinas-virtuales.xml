@@ -1,1 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<Máquinas_Virtuales>
+    <ID>vm-001</ID>
+        <Nombre>linuxmint21.3</Nombre>
+        <CPU>2</CPU>
+        <RAM tamaño="MB">4096</RAM>
+        <Disco>/home/user/VirtualBox VMs/LinuxMint21.3/LinuxMint21.3.vdi</Disco>
+        <Disco tamaño="GB">40</Disco> 
+        <Adaptador_de_red>NAT</Adaptador_de_red>
+        
+    <ID>vm-002</ID>
+         <Nombre>Debian12</Nombre>
+         <CPU>2</CPU>
+         <RAM tamaño="MB">2048</RAM>
+         <Disco>/home/user/VirtualBox VMs/Debian12/Debian12.vmdk</Disco>
+         <Disco tamaño="GB">30</Disco> 
+         <Adaptador_de_red>NAT</Adaptador_de_red>
+
+    <ID>vm-003</ID>
+         <Nombre>Windows7</Nombre>
+         <CPU>1</CPU>
+         <RAM tamaño="MB">2048</RAM>
+         <Disco>/home/user/VirtualBox VMs/Windows7/Windows7.vdi</Disco>
+         <Disco tamaño="GB">60</Disco> 
+         <Adaptador_de_red>Adaptador puente</Adaptador_de_red>
+
+</Máquinas_Virtuales>
