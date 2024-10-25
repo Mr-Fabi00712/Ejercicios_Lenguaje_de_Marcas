@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Personas SYSTEM "personal.dtd">
 <Personas>
-     <ID>1</ID>
+    <ID>
          <Nombre>Juan</Nombre>
          <Apellidos>Pérez López</Apellidos>
          <Teléfono>123456789</Teléfono>
@@ -8,8 +9,9 @@
          <Vía>Calle</Vía>
          <Nom.Vía>Gran Vía</Nom.Vía>
          <Número>100</Número>
+    </ID>
 
-     <ID>2</ID>
+    <ID>
          <Nombre>María</Nombre>
          <Apellidos>García Fernández</Apellidos>
          <Teléfono>987654321</Teléfono>
@@ -17,8 +19,8 @@
          <Vía>Avenida</Vía>
          <Nom.Vía>Constitución</Nom.Vía>
          <Número>50</Número>
-
-     <ID>3</ID>
+    </ID>
+    <ID>
          <Nombre>Carlos</Nombre>
          <Apellidos>López Martínez</Apellidos>
          <Teléfono>1122334455</Teléfono>
@@ -26,8 +28,8 @@
          <Vía>Calle</Vía>
          <Nom.Vía>Serrano</Nom.Vía>
          <Número>35</Número>
-
-     <ID>4</ID>
+    </ID>
+    <ID>
          <Nombre>Ana</Nombre>
          <Apellidos>Ruiz Sánchez</Apellidos>
          <Teléfono>2233445566</Teléfono>
@@ -35,8 +37,8 @@
          <Vía>Plaza</Vía>
          <Nom.Vía>Mayor</Nom.Vía>
          <Número>10</Número>
-
-     <ID>5</ID>
+    </ID>
+    <ID>
          <Nombre>Laura</Nombre>
          <Apellidos>Torres Gómez</Apellidos>
          <Teléfono>3344556677</Teléfono>
@@ -44,4 +46,5 @@
          <Vía>Camino</Vía>
          <Nom.Vía>El Prado</Nom.Vía>
          <Número>8</Número>
+    </ID>
 </Personas>
