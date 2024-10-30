@@ -1,0 +1,73 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="persona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Nombre" type="xs:NombreType"/>
+        <xs:element name="Apellidos" type="xs:ApellidosType"/>
+        <xs:element name="Matrícula" type="xs:MatrículaType"/>
+        <xs:element name="F.Inscripción" type="xs:F.InscripciónType"/>
+        <xs:element name="Correo" type="xs:CorreoType"/>
+        <xs:element name="Teléfonos" type="xs:TeléfonosType"/>
+        <xs:element name="Dirección" type="xs:DirecciónType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Nombre" type="xs:NombreType"/>
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="ApellidosType">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="MatrículaType">
+  <xs:simpleType>
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="F.InscripciónType">
+  <xs:simpleType>
+    <xs:restriction base="xs:date">
+      <xs:minInclusive value="2000-01-01"/>
+      <xs:maxInclusive value="2023-12-31"/>
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="F.CorreoType">
+  <xs:simpleType>
+    <xs:restriction base="xs:date">
+      <xs:minInclusive value="1900-01-01"/>
+      <xs:maxInclusive value="2010-01-01"/>
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="TeléfonosType">
+  <xs:simpleType>
+    <xs:restriction base="xs:short">
+      <xs:pattern value="9"/>  
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="DirecciónType">
+  <xs:simpleType>
+    <xs:restriction base="xs:short">
+      <xs:pattern value="9"/>  
+    </xs:restriction>
+  </xs:simpleType>
+  </xs:element>
+</xs:schema>
