@@ -15,8 +15,6 @@
         <xs:element name="Matrícula" type="MatrículaType"/>
         <xs:element name="F.Inscripción" type="F.InscripciónType"/>
         <xs:element name="Correo" type="CorreoType"/>
-        <xs:element name="Teléfonos" type="TeléfonosType"/>
-        <xs:element name="Dirección" type="DirecciónType"/>
       </xs:sequence>
   </xs:complexType>
   
