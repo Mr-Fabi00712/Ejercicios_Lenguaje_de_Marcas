@@ -1,73 +1,110 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="persona">
+<xs:element name="personas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Nombre" type="xs:NombreType"/>
-        <xs:element name="Apellidos" type="xs:ApellidosType"/>
-        <xs:element name="Matrícula" type="xs:MatrículaType"/>
-        <xs:element name="F.Inscripción" type="xs:F.InscripciónType"/>
-        <xs:element name="Correo" type="xs:CorreoType"/>
-        <xs:element name="Teléfonos" type="xs:TeléfonosType"/>
-        <xs:element name="Dirección" type="xs:DirecciónType"/>
+        <xs:element name="persona" type="PersonaType" maxOccurs="7"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="Nombre" type="xs:NombreType"/>
-  <xs:simpleType>
+
+  <xs:complexType name="PersonaType">
+      <xs:sequence>
+        <xs:element name="Nombre" type="NombreType"/>
+        <xs:element name="Apellidos" type="ApellidosType"/>
+        <xs:element name="Matrícula" type="MatrículaType"/>
+        <xs:element name="F.Inscripción" type="F.InscripciónType"/>
+        <xs:element name="Correo" type="CorreoType"/>
+        <xs:element name="Teléfonos" type="TeléfonosType"/>
+        <xs:element name="Dirección" type="DirecciónType"/>
+      </xs:sequence>
+  </xs:complexType>
+  
+
+  <xs:simpleType name="NombreType">
     <xs:restriction base="xs:string">
       <xs:maxLength value="30"/>
     </xs:restriction>
   </xs:simpleType>
-  </xs:element>
 
-  <xs:element name="ApellidosType">
-  <xs:simpleType>
+  <xs:simpleType name="ApellidosType">
     <xs:restriction base="xs:string">
       <xs:maxLength value="50"/>
     </xs:restriction>
   </xs:simpleType>
-  </xs:element>
 
-  <xs:element name="MatrículaType">
-  <xs:simpleType>
+
+  <xs:simpleType name="MatrículaType">
     <xs:restriction base="xs:ID">
       <xs:pattern value="7"/>
     </xs:restriction>
   </xs:simpleType>
-  </xs:element>
+ 
 
-  <xs:element name="F.InscripciónType">
-  <xs:simpleType>
+  <xs:simpleType name="F.InscripciónType">
     <xs:restriction base="xs:date">
       <xs:minInclusive value="2000-01-01"/>
       <xs:maxInclusive value="2023-12-31"/>
     </xs:restriction>
   </xs:simpleType>
-  </xs:element>
 
-  <xs:element name="F.CorreoType">
-  <xs:simpleType>
+
+
+  <xs:simpleType name="CorreoType">
     <xs:restriction base="xs:date">
       <xs:minInclusive value="1900-01-01"/>
       <xs:maxInclusive value="2010-01-01"/>
     </xs:restriction>
   </xs:simpleType>
-  </xs:element>
+
 
   <xs:element name="TeléfonosType">
-  <xs:simpleType>
-    <xs:restriction base="xs:short">
-      <xs:pattern value="9"/>  
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Teléfonos" type="NúmerosType" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
 
-  <xs:element name="DirecciónType">
-  <xs:simpleType>
-    <xs:restriction base="xs:short">
-      <xs:pattern value="9"/>  
+  <xs:simpleType name="NúmerosType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="10"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:element name="DirecciónType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Dirección" type="DatosType" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
+
+  <xs:complexType name="DatosType">
+      <xs:sequence>
+        <xs:element name="Vía" type="VíaType"/>
+        <xs:element name="Name" type="NameType"/>
+        <xs:element name="C.Postal" type="C.PostalType"/>
+      </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="VíaType">
+    <xs:restriction base="xs:NCName">
+      <xs:pattern value="Calle"/> 
+      <xs:pattern value="Vía"/>   
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NameType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="100"/>  
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="C.PostalType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
 </xs:schema>
