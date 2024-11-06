@@ -1,8 +1,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:element name="personas">
+<xs:element name="estudiantes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="persona" type="PersonaType" maxOccurs="7"/>
+        <xs:element name="Persona" type="PersonaType" maxOccurs="7"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -33,8 +33,8 @@
 
 
   <xs:simpleType name="MatrículaType">
-    <xs:restriction base="xs:ID">
-      <xs:pattern value="7"/>
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:pattern value="\d{7}"/>
     </xs:restriction>
   </xs:simpleType>
  
@@ -49,9 +49,8 @@
 
 
   <xs:simpleType name="CorreoType">
-    <xs:restriction base="xs:date">
-      <xs:minInclusive value="1900-01-01"/>
-      <xs:maxInclusive value="2010-01-01"/>
+    <xs:restriction base="xs:normalizedString">
+     <xs:pattern value="\d[A-Z]"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -59,14 +58,14 @@
   <xs:element name="TeléfonosType">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Teléfonos" type="NúmerosType" maxOccurs="3"/>
+        <xs:element name="Teléfonos" type="NúmerosType" maxOccurs="2"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
   <xs:simpleType name="NúmerosType">
     <xs:restriction base="xs:string">
-      <xs:pattern value="10"/>
+      <xs:pattern value="\d{10}"/>
     </xs:restriction>
   </xs:simpleType>
 
