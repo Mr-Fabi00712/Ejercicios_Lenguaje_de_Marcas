@@ -15,6 +15,8 @@
         <xs:element name="Matrícula" type="MatrículaType"/>
         <xs:element name="F.Inscripción" type="F.InscripciónType"/>
         <xs:element name="Correo" type="CorreoType"/>
+        <xs:element name="Teléfono-1" type="NúmerosType"/>
+        <xs:element name="Teléfono-2" type="NúmerosType" minOccurs="0"/>        
       </xs:sequence>
   </xs:complexType>
   
@@ -49,19 +51,10 @@
 
 
   <xs:simpleType name="CorreoType">
-    <xs:restriction base="xs:normalizedString">
-     <xs:pattern value="\d[A-Z]"/>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
     </xs:restriction>
   </xs:simpleType>
-
-
-  <xs:element name="TeléfonosType">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="Teléfonos" type="NúmerosType" maxOccurs="2"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
 
   <xs:simpleType name="NúmerosType">
     <xs:restriction base="xs:string">

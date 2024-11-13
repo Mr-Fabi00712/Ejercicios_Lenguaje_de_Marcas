@@ -28,7 +28,6 @@ xsi:noNamespaceSchemaLocation="estudiantes.xsd">
         <F.Inscripción>2019-11-20</F.Inscripción>
         <Correo>pedro.fernandez@email.com</Correo>
         <Teléfono-1>3456789012</Teléfono-1>
-        <Teléfono-2></Teléfono-2>
     </Persona>
     <Persona>
         <Nombre>Ana</Nombre>
